@@ -1,0 +1,14 @@
+services:
+  postgres:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_DB: disputedesk
+      POSTGRES_USER: dispute
+      POSTGRES_PASSWORD: dispute
+    ports:
+      - "5432:5432"
+    volumes:
+      - disputedesk-postgres:/var/lib/postgresql/data
+
+volumes:
+  disputedesk-postgres:
